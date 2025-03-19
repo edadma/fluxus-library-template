@@ -2,7 +2,7 @@ package io.github.edadma.fluxus_library_template.examples
 
 import io.github.edadma.fluxus.*
 
-object ButtonApp {
+object TestApp {
   def App: FluxusNode =
     val (message, setMessage, _) = useState("Welcome to the Test app!")
 

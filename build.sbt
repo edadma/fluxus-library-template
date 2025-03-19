@@ -58,22 +58,22 @@ lazy val library = project
   .enablePlugins(ScalaJSPlugin)
   .settings(commonSettings)
   .settings(
-    name        := "fluxus",
-    description := "A minimalist UI framework inspired by component-based design, built with Scala.js",
+    name        := "fluxus-library-template",
+    description := "A template for fluxus libraries",
     libraryDependencies ++= Seq(
-      "org.scalatest"    %%% "scalatest"                   % "3.2.19" % "test",
-      "com.lihaoyi"      %%% "pprint"                      % "0.9.0"  % "test",
-      "io.github.edadma" %%% "fluxus"                      % "0.0.1",
+      "org.scalatest"    %%% "scalatest" % "3.2.19" % "test",
+      "com.lihaoyi"      %%% "pprint"    % "0.9.0"  % "test",
+      "io.github.edadma" %%% "fluxus"    % "0.0.2-a1",
     ),
-    jsEnv                           := new org.scalajs.jsenv.nodejs.NodeJSEnv(),
-    scalaJSUseMainModuleInitializer := true,
-//    Test / scalaJSUseMainModuleInitializer := true,
-//    Test / scalaJSUseTestModuleInitializer := false,
-    Test / scalaJSUseMainModuleInitializer := false,
-    Test / scalaJSUseTestModuleInitializer := true,
-    Test / parallelExecution               := false,
-    publishMavenStyle                      := true,
-    Test / publishArtifact                 := false,
+    jsEnv                                  := new org.scalajs.jsenv.nodejs.NodeJSEnv(),
+    scalaJSUseMainModuleInitializer        := true,
+    Test / scalaJSUseMainModuleInitializer := true,
+    Test / scalaJSUseTestModuleInitializer := false,
+//    Test / scalaJSUseMainModuleInitializer := false,
+//    Test / scalaJSUseTestModuleInitializer := true,
+    Test / parallelExecution := false,
+    publishMavenStyle        := true,
+    Test / publishArtifact   := false,
   )
 
 lazy val examples = project
@@ -81,7 +81,10 @@ lazy val examples = project
   .dependsOn(library % "compile->compile;test->test")
   .settings(commonSettings)
   .settings(
-    name                            := "examples",
+    name := "examples",
+    libraryDependencies ++= Seq(
+      "io.github.edadma" %%% "fluxus" % "0.0.1",
+    ),
     scalaJSUseMainModuleInitializer := true,
     publish / skip                  := true,
     publishLocal / skip             := true,
