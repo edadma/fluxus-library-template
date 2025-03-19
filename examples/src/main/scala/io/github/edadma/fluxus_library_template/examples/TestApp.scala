@@ -1,6 +1,8 @@
 package io.github.edadma.fluxus_library_template.examples
 
 import io.github.edadma.fluxus.*
+import io.github.edadma.fluxus_library_template.{MyButton, MyButtonProps}
+import org.scalajs.dom.MouseEvent
 
 object TestApp {
   def App: FluxusNode =
@@ -13,20 +15,20 @@ object TestApp {
         h1(cls := "text-2xl font-bold", message),
         div(
           cls := "space-y-2",
-          button(
-            cls := "btn btn-primary w-full",
-            "Say Hello",
-            onClick := (() => setMessage("Hello, world!")),
+          MyButton <> MyButtonProps(
+            color = "btn-primary",
+            text = "Say Hello",
+            onClick = (_: MouseEvent) => { setMessage("Hello, world!") },
           ),
-          button(
-            cls := "btn btn-secondary w-full",
-            "Say Goodbye",
-            onClick := (() => setMessage("Goodbye, world!")),
+          MyButton <> MyButtonProps(
+            color = "btn-secondary",
+            text = "Say Goodbye",
+            onClick = (_: MouseEvent) => setMessage("Goodbye, world!"),
           ),
-          button(
-            cls := "btn btn-accent w-full",
-            "Welcome to DaisyUI!",
-            onClick := (() => setMessage("Welcome to DaisyUI!")),
+          MyButton <> MyButtonProps(
+            color = "btn-accent",
+            text = "Welcome to DaisyUI!",
+            onClick = (_: MouseEvent) => setMessage("Welcome to DaisyUI!"),
           ),
         ),
       ),
