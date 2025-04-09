@@ -1,9 +1,22 @@
 # Changelog
 
-## [0.0.1] - 2024-12-27
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.0.1] - 2025-xx-xx
+
 ### Added
-- Initial implementation of components
-- State management with hooks
-- Virtual DOM diffing
-- Event handling
-- Lucide integration
+
+### Fixed
+
+### Changed
+
+### Removed
+
+### Deprecated
+
+### Upgraded
+
+[0.0.1]: https://github.com/<user>/<repo>/releases/tag/v0.0.1

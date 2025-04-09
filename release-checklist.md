@@ -64,5 +64,7 @@ Checklist for creating a new release
   ### Removed
   
   ### Deprecated
+
+  ### Upgraded
   ```
 - [ ] Push post-release changes
