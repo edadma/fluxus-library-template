@@ -17,8 +17,8 @@ ThisBuild / sonatypeProfileName := "io.github.edadma"
 
 ThisBuild / scmInfo := Some(
   ScmInfo(
-    url("https://github.com/edadma/fluxus"),
-    "scm:git@github.com:edadma/fluxus.git",
+    url("https://github.com/edadma/fluxus_library_template"),
+    "scm:git@github.com:edadma/fluxus_library_template.git",
   ),
 )
 ThisBuild / developers := List(
@@ -30,7 +30,7 @@ ThisBuild / developers := List(
   ),
 )
 
-ThisBuild / homepage := Some(url("https://github.com/edadma/fluxus"))
+ThisBuild / homepage := Some(url("https://github.com/edadma/fluxus_library_template"))
 
 ThisBuild / pomIncludeRepository := { _ => false }
 ThisBuild / publishTo := {
@@ -56,7 +56,7 @@ lazy val library = project
   .enablePlugins(ScalaJSPlugin)
   .settings(commonSettings)
   .settings(
-    name        := "fluxus-library-template",
+    name        := "fluxus_library_template",
     description := "A template for fluxus libraries",
     libraryDependencies ++= Seq(
       "org.scalatest"    %%% "scalatest" % "3.2.19" % "test",
